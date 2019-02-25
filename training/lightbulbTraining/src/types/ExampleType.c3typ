@@ -1,0 +1,9 @@
+
+
+entity type ExampleType mixes MetricEvaluatable schema name "EXMPL"{
+
+ // The apartments that are inside this building.
+ exampleInt: int
+ exampleDouble: double
+ exampleString: string
+}
