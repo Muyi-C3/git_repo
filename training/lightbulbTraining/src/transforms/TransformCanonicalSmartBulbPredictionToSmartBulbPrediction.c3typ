@@ -1,0 +1,13 @@
+/**
+* This type encapsulates the data flow from the {@link
+CanonicalSmartBulbMeasurement} to the {@link SmartBulbMeasurement} type.
+*/
+type TransformCanonicalSmartBulbPredictionToSmartBulbPrediction mixes SmartBulbPrediction transforms CanonicalSmartBulbPrediction {
+
+
+ prediction: ~ expression "prediction"
+
+ smartBulb: ~ expression {id: "idSmartbulb"}
+
+ timestamp: ~ expression "timestamp"
+}

@@ -1,0 +1,15 @@
+/**
+* This type encapsulates the data flow from the {@link CanonicalSmartBulb} to the {@link SmartBulbMeasurementSeries} type.
+*/
+type TransformCanonicalSmartBulbToSmartBulbMeasurementSeries mixes SmartBulbMeasurementSeries transforms CanonicalSmartBulb {
+// We avoid transforming from the measurement data to the headers to prevent creating/updating the headers an excessive number of times. This is very important at large scales.
+ 
+/**
+ * The format of the id will be "SBMS_serialNo_serialNumber" to ensure that no
+two series will be duplicates.
+ */
+    id: ~ expression "concat('SBMS_serialNo_',SN)"
+    smartBulb: ~ expression { id: "SN" }
+    interval: ~ expression "'HOUR'"
+    treatment: ~ expression "'rate'"
+}

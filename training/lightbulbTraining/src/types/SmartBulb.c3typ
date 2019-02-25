@@ -1,0 +1,60 @@
+/**
+* SmartBulb.c3typ
+* A bulb capable of storing power consumption, light output, location, and more.
+*/
+entity type SmartBulb extends LightBulb mixes MetricEvaluatable type key "SMRT_BLB"
+{
+ // The latitude of this bulb.
+ latitude: double
+ // The longitude of this bulb.
+ longitude: double
+ // The unit of measurement used for this bulb's light output measurements.
+ lumensUOM: Unit
+ // The unit of measurement used for this bulb's power consumption measurements.
+ powerUOM: Unit
+ // The unit of measurement used for this bulb's temperature measurements.
+ temperatureUOM: Unit
+ // The unit of measurement used for this bulb's voltage measurements.
+voltageUOM: Unit
+ // This bulb's historical events.
+ bulbEvents: [SmartBulbEvent](smartBulb)
+// This bulb's historical measurements.
+ bulbMeasurements: [SmartBulbMeasurementSeries](smartBulb)
+// The collection of relations that pertain to this smart bulb.
+@db(order='descending(start), descending(end)')
+fixtureHistory: [SmartBulbToFixtureRelation](from)
+// The current {@link Fixture} to which this smart bulb is attached.
+currentFixture: Fixture stored calc 'fixtureHistory[0].(end == null).to'
+/**
+* Returns the life span of this smartBulb
+ */
+ lifeSpanInYears: function(bulbId: string): double js server
+
+ /**
+* Returns the longest life span of any smartBulb
+ */
+ longestLifeSpanBulb: function(): string js server
+
+ /**
+* Returns the shortest life span of any smartBulb
+ */
+ shortestLifeSpanBulb: function(): string js server
+
+ /**
+* Returns the avg life span of all smartBulbs
+ */
+ averageLifeSpan: function(): double js server
+
+ /**
+  * This bulb's historical predictions.
+  */
+ @db(order='descending(timestamp)')
+ bulbPredictions: [SmartBulbPrediction](smartBulb)
+
+ /**
+  * This bulb's latest prediction.
+  */
+ currentPrediction: SmartBulbPrediction stored calc "bulbPredictions[0]"
+
+
+}

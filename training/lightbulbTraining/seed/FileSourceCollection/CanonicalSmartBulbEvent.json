@@ -1,0 +1,11 @@
+{
+    "id": "CanonicalSmartBulbEvent",
+    "name": "CanonicalSmartBulbEvent",
+    "source": {
+      "typeName": "CanonicalSmartBulbEvent"
+    },
+    "sourceSystem": {
+          "id": "Legacy"
+    }
+  }
+  

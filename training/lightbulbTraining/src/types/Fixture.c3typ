@@ -1,0 +1,14 @@
+/**
+* Fixture.c3typ
+* A single fixture in which a single {@link SmartBulb} may be connected.
+*/
+entity type Fixture mixes MetricEvaluatable schema name "FXTR" {
+    // The {@link Apartment} in which this fixture is located.
+    apartment: Apartment
+    // The collection of relations that map to this fixture.
+    @db(order='descending(toUTC(start)), descending(toUTC(end))')
+    bulbHistory: [SmartBulbToFixtureRelation](to)
+    // The current {@link SmartBulb} attached to this fixture.
+    currentBulb: SmartBulb stored calc 'bulbHistory[0].(end == null).from'
+
+}

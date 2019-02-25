@@ -1,0 +1,19 @@
+/**
+* This type represents the raw data that will represent {@link SmartBulb}information.
+*/
+type CanonicalSmartBulb mixes Canonical<CanonicalSmartBulb> {
+ // This represents the manufacturer of a {@link LightBulb}
+ Manufacturer: string
+ // This represents the bulb type of a {@link LightBulb}
+ BulbType: string
+ // This represents the wattage of a {@link LightBulb}
+ Wattage: decimal
+ // This represents the id of a {@link LightBulb}
+ SN: string
+ // This represents the start date of a {@link LightBulb}
+ StartDate: datetime
+ // This represents the latitude of a {@link SmartBulb}
+ Latitude: double
+ // This represents the longitude of a {@link SmartBulb}
+ Longitude: double
+}

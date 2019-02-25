@@ -1,0 +1,4 @@
+@DFE(period='Hour', interval='Hour', flattenWindows=true)
+type SmartBulbOverheatInput mixes CompoundDataFlowEvent<SmartBulb> {
+	temperature: SmartBulbOverheat
+}

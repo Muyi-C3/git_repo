@@ -1,0 +1,15 @@
+ui module lightbulb {
+ application lightbulb {
+ "name": "lightbulb",
+ "humanName": "Smart Bulb Failure Prediction",
+ "showDesignerComponents": true,
+ "url": "lightbulb",
+ "id": "lightbulb.lightbulb",
+ "theme": "base",
+ "package": "lightbulbTraining",
+ "defaultPage": "Home",
+ "thumbnail": "template-thumbs/120/ui.Dashboard2x2.gif",
+ "noneditable": false,
+ "moduleName": "lightbulb"
+ }
+}

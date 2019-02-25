@@ -1,0 +1,18 @@
+/**
+* This type represents the raw data that will represent {@link SmartBulbEvent}
+information.
+*/
+type CanonicalSmartBulbEvent mixes Canonical<CanonicalSmartBulbEvent> {
+ // This represents the id for a {@link SmartBulbEvent}
+ id: string
+ // This represents the id of a {@link SmartBulb}
+ bulb: string
+ // This represents the eventCode of a {@link SmartBulbEvent}
+ eventCode: string
+ // This represents the eventType of a {@link SmartBulbEvent}
+ eventType: string
+ // This represents a datetime to use as the start of a {@link SmartBulbEvent}
+ start: datetime
+ // This represents a datetime to use as the end of a {@link SmartBulbEvent}
+ end: datetime
+}

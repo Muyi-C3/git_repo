@@ -1,0 +1,12 @@
+/**
+* This type represents the raw data that will represent {@link Fixture} information.
+*/
+type CanonicalSmartBulbPrediction mixes Canonical<CanonicalSmartBulbPrediction> {
+ id2: string
+
+ prediction: double
+
+ idSmartbulb: string
+
+ timestamp: datetime
+}

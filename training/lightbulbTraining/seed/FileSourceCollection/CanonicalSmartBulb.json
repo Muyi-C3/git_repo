@@ -1,0 +1,11 @@
+{
+    "id": "CanonicalSmartBulb",
+    "name": "CanonicalSmartBulb",
+    "source": {
+      "typeName": "CanonicalSmartBulb"
+    },
+    "sourceSystem": {
+          "id": "Legacy"
+    }
+  }
+  
